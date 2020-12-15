@@ -181,7 +181,7 @@ partial class Build : NukeBuild
          .Executes(() =>
          {
              DotNetPack(_ => _
-                 .SetProject(Solution)
+                 .SetProject(SourceDirectory/ "KimaiDotNet.Core/KimaiDotNet.Core.csproj")
                  .SetNoBuild(InvokedTargets.Contains(Compile))
                  .SetConfiguration(Configuration)
                  .SetOutputDirectory(PackageDirectory)
