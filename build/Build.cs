@@ -61,7 +61,7 @@ partial class Build : NukeBuild
 
     [Solution] private readonly Solution Solution;
     [GitRepository] private readonly GitRepository GitRepository;
-    [GitVersion(Framework = "net5.0")] private readonly GitVersion GitVersion;
+    [GitVersion(Framework = "netcoreapp3.1")] private readonly GitVersion GitVersion;
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath TestsDirectory => RootDirectory / "tests";
@@ -103,8 +103,8 @@ partial class Build : NukeBuild
                  .SetProjectFile(Solution)
                  .SetConfiguration(Configuration)
                  .SetAssemblyVersion(GitVersion.AssemblySemVer)
-                 //.SetFileVersion(GitVersion.AssemblySemFileVer)
-                 //.SetInformationalVersion(GitVersion.InformationalVersion)
+                 .SetFileVersion(GitVersion.AssemblySemFileVer)
+                 .SetInformationalVersion(GitVersion.InformationalVersion)
                  .EnableNoRestore());
          });
 

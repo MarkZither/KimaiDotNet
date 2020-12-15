@@ -4,6 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>MarkZither.KimaiDotNet.Core</AssemblyName>
     <RootNamespace>MarkZither.KimaiDotNet.Core</RootNamespace>
+    <Authors>Mark Burton</Authors>
+    <Product>MarkZither.KimaiDotNet</Product>
+    <PackageId>MarkZither.KimaiDotNet.ApiClient</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
