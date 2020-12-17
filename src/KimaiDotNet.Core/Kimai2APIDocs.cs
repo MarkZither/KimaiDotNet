@@ -50,6 +50,7 @@ namespace MarkZither.KimaiDotNet
         /// True: will dispose the provided httpClient on calling Kimai2APIDocs.Dispose(). False: will not dispose provided httpClient</param>
         public Kimai2APIDocs(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
         {
+            BaseUri = httpClient.BaseAddress;
             Initialize();
         }
 
@@ -132,7 +133,10 @@ namespace MarkZither.KimaiDotNet
         /// </summary>
         private void Initialize()
         {
-            BaseUri = new System.Uri("http://localhost");
+            if (BaseUri is null)
+            {
+                BaseUri = new System.Uri("http://localhost");
+            }
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
