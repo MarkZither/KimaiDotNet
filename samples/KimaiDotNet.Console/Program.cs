@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Collections.Generic;
 using System.Net.Http;
+using Microsoft.Rest;
 
 namespace KimaiDotNet.Console
 {
@@ -23,6 +24,7 @@ namespace KimaiDotNet.Console
                     .UseHost(_ => Host.CreateDefaultBuilder(),
                         host =>
                         {
+                            ServiceClientTracing.IsEnabled = true;
                             host.ConfigureAppConfiguration((hostingContext, config) =>
                             {
                                 // The next 2 lines commented out as they are added by default in the correct order
